@@ -24,17 +24,20 @@
 
         <!-- inizio sezione aggiunta todo -->
         <div class="add-todo">
-            <input type="text" placeholder="Inserisci il tuo punto">
-            <button>Aggiungi</button>
+            <input type="text" placeholder="Inserisci il tuo punto" v-model="newTodo" @keyup.enter="addNewTodo">
+            <button @click="addNewTodo">Aggiungi</button>
         </div>
         <!-- fine sezione aggiunta todo -->
 
         <!-- inizio sezione lista todo -->
         <div class="todo-list">
             <ul v-if="todoList.length > 0">
+                <li class="clearfix">
+                    <i class="fas fa-skull-crossbones" @click="removeAllTodo"> Cancella tutto</i>
+                </li>
                 <li v-for="(item, index) in todoList" class="clearfix">
-                    {{item}}
-                    <i class="far fa-trash-alt"></i>
+                    {{index + 1}} - {{item}}
+                    <i class="far fa-trash-alt" @click="removeTodo(index)"></i>
                 </li>
             </ul>
             <h2 v-else>Nessun punto in lista</h2>

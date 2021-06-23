@@ -7,7 +7,22 @@ const app = new Vue(
                 'Pulire casa',
                 'Dare da mangiare agli animali',
                 'Dare da bere ai fiori'
-            ]
+            ],
+            newTodo : ''
+        },
+        methods: {
+            addNewTodo : function(){
+                if(this.newTodo != ''){
+                    this.todoList.push(this.newTodo);
+                    this.newTodo = '';
+                }
+            },
+            removeTodo : function(index){
+                this.todoList.splice(index,1);
+            },
+            removeAllTodo : function(){
+                this.todoList = [];
+            }
         }
     }
 );
