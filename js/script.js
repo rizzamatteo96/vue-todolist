@@ -21,10 +21,14 @@ const app = new Vue(
                 this.todoList.splice(index,1);
             },
             removeAllTodo : function(){
-                let userAnswer = confirm('ATTENZIONE!! Verranno rimossi tutti i punti della lista. Premere "OK" per procedere')
+                let userAnswer = confirm('ATTENZIONE!! Verranno rimossi tutti i punti della lista. Premere "OK" per procedere');
                 if (userAnswer) {
                     this.todoList = [];
                 }
+            },
+            addClass : function(indice){
+                let element = document.getElementById(indice);
+                element.classList.toggle('text-bar');
             }
         }
     }

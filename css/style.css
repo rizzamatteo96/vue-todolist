@@ -61,3 +61,7 @@
     color: red;
     cursor: pointer;
 }
+
+.text-bar{
+    text-decoration: line-through;
+}
