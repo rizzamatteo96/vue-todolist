@@ -21,7 +21,10 @@ const app = new Vue(
                 this.todoList.splice(index,1);
             },
             removeAllTodo : function(){
-                this.todoList = [];
+                let userAnswer = confirm('ATTENZIONE!! Verranno rimossi tutti i punti della lista. Premere "OK" per procedere')
+                if (userAnswer) {
+                    this.todoList = [];
+                }
             }
         }
     }
