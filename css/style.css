@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+.clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .container{
     width: 50%;
     height: 100vh;
@@ -41,4 +47,17 @@
 .todo-list ul li{
     padding: 10px;
     border-bottom: 1px solid brown;
+}
+
+.todo-list ul li:hover{
+    background-color: rgb(255, 255, 250);
+}
+
+.todo-list ul li i{
+    float: right;
+}
+
+.todo-list ul li i:hover{
+    color: red;
+    cursor: pointer;
 }

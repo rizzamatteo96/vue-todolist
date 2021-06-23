@@ -31,11 +31,13 @@
 
         <!-- inizio sezione lista todo -->
         <div class="todo-list">
-            <ul>
-                <li>
-                    elemento della lista
+            <ul v-if="todoList.length > 0">
+                <li v-for="(item, index) in todoList" class="clearfix">
+                    {{item}}
+                    <i class="far fa-trash-alt"></i>
                 </li>
             </ul>
+            <h2 v-else>Nessun punto in lista</h2>
         </div>
         <!-- fine sezione lista todo -->
     </div>
