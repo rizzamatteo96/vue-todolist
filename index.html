@@ -36,7 +36,7 @@
                     <i class="fas fa-skull-crossbones" @click="removeAllTodo"> Cancella tutto</i>
                 </li>
                 <li v-for="(item, index) in todoList" class="clearfix">
-                    <span :id="index"  @click="addClass(index)">{{index + 1}} - {{item}}</span>
+                    <span :id="'indice' + index"  @click="addClass(index)">{{index + 1}} - {{item}}</span>
                     <i class="far fa-trash-alt" @click="removeTodo(index)"></i>
                 </li>
             </ul>

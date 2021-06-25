@@ -27,7 +27,7 @@ const app = new Vue(
                 }
             },
             addClass : function(indice){
-                let element = document.getElementById(indice);
+                let element = document.getElementById('indice' + indice);
                 element.classList.toggle('text-bar');
             }
         }
